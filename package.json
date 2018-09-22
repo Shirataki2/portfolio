@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://shirataki2.github.io/portfolio",
+  "homepage": "http://shirataki2.github.io/portfolio/",
   "dependencies": {
     "bootstrap": "^4.1.3",
     "gh-pages": "^2.0.0",
