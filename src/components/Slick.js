@@ -11,34 +11,53 @@ class Slick extends Component {
                     {
                         main_caption: 'Photo-realistic 3D',
                         sub_caption: '3DソフトBlenderを用いた作品の制作',
-                        img_src: 'https://i.gyazo.com/363b13d5f2c04141df904bce25b61e3b.png'
+                        img_src: 'https://i.gyazo.com/363b13d5f2c04141df904bce25b61e3b.png',
+                        link_url: '#',
+                        newtab: false,
                     },
                     {
                         main_caption: 'Deep Learning',
                         sub_caption: 'LSTM+CNNによる画像キャプション生成',
-                        img_src: 'https://i.gyazo.com/d3ce31e14282e8b6295803361c931473.jpg'},
+                        img_src: 'https://i.gyazo.com/d3ce31e14282e8b6295803361c931473.jpg',
+                        link_url: '#',
+                        newtab: false,
+                    },
                     {
                         main_caption: 'Programming',
                         sub_caption: 'このHPはReact.jsにより開発されています',
-                        img_src: 'https://i.gyazo.com/383c0c01d53972454ac33d852ec514f1.png'
+                        img_src: 'https://i.gyazo.com/383c0c01d53972454ac33d852ec514f1.png',
+                        link_url: '#',
+                        newtab: false,
                     },
                     {
                         main_caption: 'KCS',
                         sub_caption: '慶応義塾内の技術サークルに属しています',
-                        img_src: 'https://i.gyazo.com/33a0d703ee127b751874694d23e7f683.jpg'
+                        img_src: 'https://i.gyazo.com/33a0d703ee127b751874694d23e7f683.jpg',
+                        link_url: 'https://kcs1959.jp/',
+                        newtab: true,
                     }
                 ],
             settings: {
                 dots: true,
                 infinite: true,
-                speed: 500,
+                arrows: true,
+                speed: 1000,
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 swipeToSlide: true,
                 autoplay: true,
-                autoplaySpeed: 3500
+                autoplaySpeed: 4500,
+                cssEase: 'ease-in-out'
             }
         };
+    }
+
+    static openAsNewTab(bool) {
+        if (bool) {
+            return '_blank';
+        } else {
+            return '_self';
+        }
     }
 
     render() {
@@ -53,7 +72,13 @@ class Slick extends Component {
                             <Grid>
                                 <Row>
                                     <Col xs={12} xsOffset={2}>
-                                        <h1 className="main_caption">{slide.main_caption}</h1>
+                                        <h1 className="main_caption">
+                                            <a target={Slick.openAsNewTab(slide.newtab)}
+                                               href={slide.link_url}
+                                               className="main_caption">
+                                                {slide.main_caption}
+                                            </a>
+                                        </h1>
                                         <h3 className="sub_caption">{slide.sub_caption}</h3>
                                     </Col>
                                 </Row>

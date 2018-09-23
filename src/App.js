@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {BrowserRouter, Route} from 'react-router-dom';
 import Head from './components/Head';
-import About from './About';
+import Skill from './Skill';
 import Home from "./Home";
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
                 <div>
                     <header><Head/></header>
                     <Route exact path='/' component={Home}/>
-                    <Route exact path='/about' component={About}/>
+                    <Route exact path='/works' component={Skill}/>
                 </div>
             </BrowserRouter>
         );

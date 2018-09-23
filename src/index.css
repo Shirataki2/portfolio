@@ -2,11 +2,7 @@
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
-body {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    color: #5a5a5a;
-}
+
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -197,4 +193,115 @@ img{
 .img_responsive{
     margin-bottom: -1080px;
     filter: brightness(70%);
+}
+
+.main_caption:hover, .main_caption:link, .main_caption:visited {
+    text-decoration: none;
+    color: azure;
+}
+
+.contain > div > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+}
+
+.cap_text {
+    pointer-events: none;
+    justify-content: start !important;
+    line-height: 0;
+}
+
+.cap_number {
+    font-size: 450px !important;
+
+    transition: all 700ms 0s ease-out;
+    font-family: Impact, "Tahoma Bold", "平成角ゴシック", 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+    font-weight: normal;
+    color: #373c4c;
+}
+
+.cap_number span {
+    display: inline-block;
+
+    position: relative;
+    transform: translate3d(-15%, 0, 0);
+    transition: all 400ms 0s ease-out;
+}
+
+.cap_header {
+    margin-left: 450px;
+    font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+
+    font-size: 70px;
+    color: white;
+    transition: all 200ms 0s ease-out;
+}
+
+.stripe {
+    height: 2px;
+    width: auto;
+}
+
+.slopeBegin {
+    background-color: #20232f;
+
+    clip-path: polygon(20vw 0, 70% 0, calc(70% - 20vw) 100%, 0 100%);
+    transition: all 400ms 0s ease-out;
+}
+
+.slopeEnd {
+    clip-path: polygon(70% 0, 100% 0, calc(100% - 20vw) 100%, calc(70% - 20vw) 100%);
+    transition: all 400ms 0s ease-out;
+}
+
+.slopeBegin,
+.slopeEnd {
+    position: absolute;
+    width: 140%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.pink {
+    background: linear-gradient(to right, deeppink 0%, coral 100%);
+}
+
+.green {
+    background: linear-gradient(to right, #c3f7f0 0%, #a7e820 100%);
+}
+
+.blue {
+    background: linear-gradient(to right, #0608ff 0%, #b261c7 100%);
+}
+
+@media (max-width: 40em) {
+    .cap_number {
+        font-size: 200px !important;
+        transition: all 400ms 0s ease-out;
+    }
+
+    .cap_number span {
+        position: relative;
+        height: 40%;
+        transform: translate3d(-10%, -20%, 0);
+    }
+
+    .slopeBegin {
+        clip-path: polygon(0% 0%, 150% 0%, -170% 180%, 0% 0);
+        transition: all 400ms 0s ease-out;
+    }
+
+    .slopeEnd {
+        clip-path: polygon(150% 0%, -170% 180%, -150% 100%, 100% 100%);
+        transition: all 400ms 0s ease-out;
+    }
+
+    .cap_header {
+        margin-left: 2%;
+        font-size: 70px;
+        color: white;
+        transition: all 400ms 0s ease-out;
+    }
 }
